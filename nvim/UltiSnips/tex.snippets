@@ -73,6 +73,7 @@ snippet td "superscript" iA
 ^{$1}$0
 endsnippet
 
+context "math()"
 snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
@@ -139,7 +140,8 @@ endsnippet
 
 snippet fig "Figure Environnement"
 \begin{figure}[H]
-	\includegraphics[width=$1]{$2}
+	\centering
+	\includegraphics[width=$1]{figures/$2}
 	\caption{$3}
 	\label{$4}
 \end{figure}
@@ -238,7 +240,7 @@ snippet taylor "taylor" w
 endsnippet
 
 snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\sum_{i=${1:1}}^{${2:n}} $3
 endsnippet
 
 snippet lim "limit" w
@@ -290,12 +292,12 @@ endsnippet
 
 context "math()"
 snippet xnn "xn" iA
-x_{k}
+x_{n}
 endsnippet
 
 context "math()"
 snippet ynn "yn" iA
-y_{k}
+y_{n}
 endsnippet
 
 context "math()"
@@ -430,25 +432,25 @@ snippet inn "in " iA
 \in 
 endsnippet
 
-context "math()"
-snippet \N "Natural Number" iA
-\mathbb{N}
-endsnippet
+# context "math()"
+# snippet \N "Natural Number" iA
+# \mathbb{N}
+# endsnippet
 
-context "math()"
-snippet \R "Real Number" iA
-\mathbb{R}
-endsnippet
+# context "math()"
+# snippet \R "Real Number" iA
+# \mathbb{R}
+# endsnippet
 
-context "math()"
-snippet \Q "Rationnal number" iA
-\mathbb{Q}
-endsnippet
+# context "math()"
+# snippet \Q "Rationnal number" iA
+# \mathbb{Q}
+# endsnippet
 
-context "math()"
-snippet \Z "Entier Number" iA
-\mathbb{Z}
-endsnippet
+# context "math()"
+# snippet \Z "Entier Number" iA
+# \mathbb{Z}
+# endsnippet
 
 snippet Nn "cap" iA
 \cap 
@@ -510,20 +512,20 @@ snippet letw "let omega" iA
 Let $\Omega \subset \mathbb{C}$ be open.
 endsnippet
 
-context "math()"
-snippet \H "H" iA
-\mathbb{H}
-endsnippet
+# context "math()"
+# snippet \H "H" iA
+# \mathbb{H}
+# endsnippet
 
-context "math()"
-snippet \D "D" iA
-\mathbb{D}
-endsnippet
+# context "math()"
+# snippet \D "D" iA
+# \mathbb{D}
+# endsnippet
 
-context "math()"
-snippet \C "C" iA
-\mathbb{C} 
-endsnippet
+# context "math()"
+# snippet \C "C" iA
+# \mathbb{C} 
+# endsnippet
 
 snippet fun "Fonction" i
 $1 : $2 \rightarrow $3
@@ -562,43 +564,43 @@ snippet -< "<-" iA
 endsnippet
 
 snippet Def "Définition" 
-\begin{tcolorbox}[colback=blue!10!white,colframe=blue!65!black,title=Définition $1 :]
+\begin{defin}
 
 ${0:${VISUAL}}
 
-\end{tcolorbox}
+\end{defin}
 endsnippet
 
 snippet THR "Théorème"
-\begin{tcolorbox}[colback=red!10!white,colframe=red!60!black,title=Théorème $1 :]
+\begin{thrm}{$1}{$2}
 
 ${0:${VISUAL}}
 
-\end{tcolorbox}
+\end{thrm}
 endsnippet
 
 snippet COR "Corollaire"
-\begin{tcolorbox}[colback=green!10!white,colframe=green!65!black,title=Corollaire/Lemme $1 :]
+\begin{COR}
 
 ${0:${VISUAL}}
 
-\end{tcolorbox}
+\end{COR}
 endsnippet
 
 snippet EXP "Exemple"
-\begin{tcolorbox}[colback=yellow!10!white,colframe=yellow!65!black,title=Exemple $1 :]
+\begin{exemple}
 
 ${0:${VISUAL}}
 
-\end{tcolorbox}
+\end{exemple}
 endsnippet
 
 snippet EXE "Exercice"
-\begin{tcolorbox}[colback=purple!10!white,colframe=purple!65!black,title=Exercice $1 :]
+\begin{exo}
 
 ${0:${VISUAL}}
 
-\end{tcolorbox}
+\end{exo}
 endsnippet
 
 snippet bf "Gras" i
@@ -738,3 +740,55 @@ endsnippet
 snippet gamma "gamma" i
 \gamma $0
 endsnippet
+
+snippet arr "arrow for annotation" 
+\Arrow[jump=${1:1}]{$2}$0
+endsnippet
+
+context "math()"
+snippet tns "pour relativité" iA
+$1^{$2 \ $3}_{$4 \ $5} $0
+endsnippet
+
+snippet LBD "Labmda" iA
+\Lambda
+endsnippet
+
+context "math()"
+snippet Sigma "Sigma" iA
+\Sigma 
+endsnippet
+
+context "math()"
+snippet sigma "Sigma" iA
+\sigma 
+endsnippet
+
+context "math()"
+snippet sump "Somme physicienne" i
+\sum_{i} $1 $0
+endsnippet
+
+context "math()"
+snippet vvii "Vecteur vitesse i" iA
+\vv{v}_{i}
+endsnippet
+
+snippet Warr "WithArrow" bA
+\begin{align*}
+\begin{WithArrow}
+	${1:${VISUAL}}
+.\end{WithArrow}
+\end{align*}
+endsnippet
+
+priority 10
+snippet "dot" "point sur le vecteur" riA
+\dot{$1}$0
+endsnippet
+
+priority 10
+snippet "jerk" "deux point sur le vecteur" riA
+\ddot{$1}$0
+endsnippet
+

@@ -46,9 +46,12 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 set background=dark
 set termguicolors
-colorscheme deep-space
+colorscheme catppuccin
 let g:deepspace_italics=1
-let g:airline_theme='deep_space'
+let g:airline_theme='catppuccin'
+
+nnoremap <Leader>n :colorscheme nord<CR>
+nnoremap <Leader>d :colorscheme deep-space<CR>
 
 " Coc autocompletion
 
@@ -85,7 +88,14 @@ let g:UltiSnipsSnippetDirectories = ["~/.config/nvim/UltiSnips"]
 
 " Make sure to have python3 package for nvim, if not, do pip install neovim
 
+" For Inkscape figure
+
+inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
+
 " Nvim Plugin
+
+
 
 call plug#begin()
 
@@ -103,6 +113,7 @@ Plug 'https://github.com/preservim/tagbar'
 Plug 'https://github.com/lervag/vimtex'
 Plug 'https://github.com/neoclide/coc.nvim'
 Plug 'https://github.com/SirVer/ultisnips/'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 set encoding=UTF-8
 
