@@ -1,0 +1,12 @@
+configuration {
+	cursor: pointer;	
+	font: "FiraCode Nerd Font Medium 15";
+	display-drun: " : ";
+	display-window: "Window : ";
+	show-icons: true;
+	modi: "window,drun";
+	icon-theme: "Papirus";
+	drun-display-format: "{icon} {name}";
+}
+
+@theme "~/.config/rofi/actual-theme.rasi"

@@ -1,0 +1,184 @@
+* {
+    background:     #1B202A;
+    background-alt: #3e95ff;
+    foreground:     #C0CAF5FF;
+	bordercolor:	#e00000;
+}
+
+
+/***____ Main Window____***/
+
+window {
+	/* For windows widget */
+
+	transparency:					"real";
+	location:						center;
+	anchor:							center;
+	fullscreen:						false;
+	width:							45%;
+	x-offset:						0px;
+	y-offset:						0px;
+
+	enabled:						true;
+	margin:							0px;
+    padding:						0px;
+    border:							0px solid;
+    border-radius:					10px;
+    border-color:					@bordercolor;
+    cursor:							"default";
+    background-color:				@background;
+}
+
+/***____ Main Box ____***/
+
+mainbox {
+	enabled:						true;
+	spacing:						15px;
+	margin:							0px;
+	padding:						30px;
+	border:							0px solid;
+	border-radius:					0px;
+	border-color:					@bordercolor;
+	background-color:				transparent;
+	children:						[ "inputbar", "listview" ];
+}
+
+/***____ InputBar ____***/
+inputbar {
+	enabled:						true;
+	spacing:						10px;
+	margin:							0px;
+	padding:						0px;
+	border:							0px solid;
+	border-radius:					10px;
+    border-color:					@bordercolor;
+	background-color:				@background;
+	text-color:						@foreground;
+	children:				        [ "textbox-prompt-colon", "prompt", "entry" ];
+}
+
+textbox-prompt-colon {
+	enabled:						true;
+	expand:							false;
+	str:							" 󱁝 ";
+	font:							"FiraCode Nerd Font 20";
+	padding:						0px;
+	border-radius:					100%;
+	background-color:				@background;
+	text-color:						@foreground;
+	padding:						12px;
+}
+
+prompt {
+    enabled:						true;
+    border-radius:					100%;
+	font:							"FiraCode Nerd Font 15";
+	background-color:				transparent;
+	text-color:						inherit;
+	padding:						15px;
+//  background-color:				#0083FF;
+//  text-color:						#EFEFEF;
+}
+
+entry {
+	enabled:						true;
+	background-color:				@background-alt;
+	text-color:						@background;
+	cursor:							text;
+	placeholder:					"Search...";
+	placeholder-color:				inherit;
+	border:							0px;
+	border-radius:					30px;
+	padding:						15px;
+}
+
+/***____ Listview ____***/
+listview {
+	enabled:					    true;
+    columns:						2;
+    lines:							8;
+    cycle:							true;
+    dynamic:						true;
+    scrollbar:						false;
+    layout:							vertical;
+    reverse:						false;
+    fixed-height:					true;
+    fixed-columns:					true;	
+
+	spacing:						20px;
+	margin:							0px;
+	padding:						0px;
+	border:							0px solid;
+	border-radius:					0px;
+//	border-color;					#;
+	background-color:				transparent;
+	text-color:						@foreground;
+	cursor:							"default";
+}
+
+scrollbar {
+	handle-width:					5px;
+	hanfle-color:					@selected;
+	border-radius:					0px;
+	background-color:				@background-alt;
+}
+
+/***____ Elements ____***/
+
+element {
+	enabled:						true;
+	spacing:						10px;
+	margin:							0px;
+	padding:						10px;
+	border:							0px solid;
+	border-radius:					25px;
+	border-color:					@bordercolor;
+	background-color:				transparent;
+	text-color:						@foreground;
+	cursor:							pointer;
+}
+
+element normal.normal {
+	background-color:				@background;
+	text-color:						@foreground;
+}
+
+element selected.normal {
+	background-color:				@background-alt;
+	text-color:						@background;
+}
+
+element-text {
+	background-color:				transparent;
+	text-color:						inherit;
+	highlight:						inherit;
+	cursor:							inherit;
+	vertical-align:					0.5;
+	horizontal-align:				0.0;
+}
+
+element-icon {
+	background-color:				transparent;
+	text-color:						inherit;
+	size:							35px;
+	cursor:							inherit;
+}
+
+/***____ Message ____***/
+
+error-message {
+	padding:						15px;
+	border:							5px solid;
+	border-radius:					12px;
+	border-color:					@bordercolor;
+	background-color:				@background;
+	text-color:						@foreground;
+}
+
+textbox {
+	background-color:				@background;
+	text-color:						@foreground;
+	vertical-align:					0.5;
+	horinzontal-align:				0.0;
+	highlight:						none;
+}
