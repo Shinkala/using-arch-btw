@@ -1,0 +1,11 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.lang.tex",
+    "lazyvim.plugins.extras.ui.alpha",
+    "lazyvim.plugins.extras.util.mini-hipatterns"
+  ],
+  "news": {
+    "NEWS.md": "2123"
+  },
+  "version": 2
+}
